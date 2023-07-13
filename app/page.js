@@ -32,16 +32,16 @@ export default function Home() {
       <div className="max-w-screen-lg mx-auto">
         <div className="grid grid-cols-2 gap-3  my-12">
           <h1 className="font-oswald text-5xl">
-            WELCOME TO POKE'S DREAMY DISNEY GETAWAY{" "}
+            WELCOME TO POKE&aposS DREAMY DISNEY GETAWAY{" "}
           </h1>
           <p className=" text-base">
             Experience the ultimate retreat just 4 miles from Disney World!
             Indulge in thrilling water slides, themed rooms like Frozen, Coco,
-            and Mario Game Room, and an entertainer's kitchen. Relax on the
+            and Mario Game Room, and an entertainer&aposs kitchen. Relax on the
             private patio with a heated pool. Accommodating up to 13 guests in 6
-            bedrooms, Poke's Dreamy Disney Getaway is the perfect destination
-            for magical memories. Stay connected with high-speed Wi-Fi. Unleash
-            the enchantment and book your stay today!
+            bedrooms, Poke&aposs Dreamy Disney Getaway is the perfect
+            destination for magical memories. Stay connected with high-speed
+            Wi-Fi. Unleash the enchantment and book your stay today!
           </p>
         </div>
         <div className="my-12" height="300px">
@@ -57,14 +57,14 @@ export default function Home() {
           <p className="text-base">
             A luxurious haven for Disney enthusiasts. Located just over 4 miles
             from the enchantment of Disney®, this themed home offers the perfect
-            retreat. Nestled within the coveted Windsor Hills community, you'll
-            have access to incredible on-site resort amenities just steps away.
-            Step inside this professionally designed and furnished space,
-            curated for your comfort and delight. With <b>6 bedrooms</b>{" "}
+            retreat. Nestled within the coveted Windsor Hills community,
+            you&aposll have access to incredible on-site resort amenities just
+            steps away. Step inside this professionally designed and furnished
+            space, curated for your comfort and delight. With <b>6 bedrooms</b>{" "}
             accommodating <b>up to 13 guests</b>, everyone will have their own
             space to relax. Immerse yourself in the Disney spirit and embark on
             a journey filled with joy, laughter, and enchanting memories.
-            Experience the magic at Poke's Dreamy Disney Getaway!
+            Experience the magic at Poke&aposs Dreamy Disney Getaway!
           </p>
           <Image
             src="/DSC05248.jpg"

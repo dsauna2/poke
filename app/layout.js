@@ -12,7 +12,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <script src="https://secure.ownerreservations.com/widget.js"></script>
         <link
           href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap"
           rel="stylesheet"
