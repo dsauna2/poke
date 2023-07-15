@@ -56,7 +56,7 @@ export default function Overview() {
                 </strong>
               </li>
               <li>
-                <strong>Entertainer's Kitchen</strong>
+                <strong>{`Entertainer's Kitchen`}</strong>
               </li>
               <li>
                 <strong>Private patio with HEATED POOL</strong>
@@ -68,7 +68,7 @@ export default function Overview() {
                 <strong>Fiber High Speed Wi-Fi</strong>
               </li>
             </ul>
-            Situated just over 4 miles from the enchantment of Disney®, this
+            {`Situated just over 4 miles from the enchantment of Disney®, this
             themed home is the perfect retreat. Located in the coveted Windsor
             Hills community, you'll have access to incredible on-site resort
             amenities just steps away. Indulge in the magic as you step inside
@@ -82,7 +82,7 @@ export default function Overview() {
             luxurious home welcomes you into the Disney spirit from the moment
             you arrive. Experience the enchantment at Poke's Dreamy Disney
             Getaway and embark on an unforgettable journey filled with joy,
-            laughter, and magical moments!
+            laughter, and magical moments!`}
           </div>
         </div>
         <div className="my-12">
