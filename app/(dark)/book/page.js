@@ -1,5 +1,5 @@
 import React from "react";
-import { bookWidget } from "../widgets";
+import { bookWidget } from "../../widgets";
 
 export default function page() {
   return (

@@ -2,9 +2,13 @@ import React from "react";
 import NavItem from "./NavItem";
 import Image from "next/image";
 
-export default function Header() {
+export default function Header({ dark }) {
   return (
-    <header className="flex items-center z-30 absolute index-x-0 justify-between w-full px-20 py-5 text-white">
+    <header
+      className={`flex items-center z-30 absolute index-x-0 justify-between w-full px-20 py-5 text-white ${
+        dark ? "bg-slate-400" : ""
+      }`}
+    >
       <a href="/">
         <Image
           width={80}
@@ -19,8 +23,6 @@ export default function Header() {
           <NavItem text="Overview" link="overview"></NavItem>
           <NavItem text="Availability" link="availability"></NavItem>
           <NavItem text="Gallery" link="gallery"></NavItem>
-          <NavItem text="Reviews" link="reviews"></NavItem>
-          <NavItem text="Contact" link="contact"></NavItem>
           <NavItem text="Book" link="book"></NavItem>
         </ul>
       </nav>

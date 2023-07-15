@@ -1,4 +1,6 @@
 import Image from "next/image";
+import hero from "../../public/hero.jpg";
+
 export default function Home() {
   const bookWidget = `
   <div class="ownerrez-widget" data-propertyId="4cace0d1e8f44b069667db5417cb7758" data-widget-type="Booking/Inquiry" data-widgetId="f629c188734b4d1fb0a6d1f039ad19d3"></div>
@@ -9,10 +11,9 @@ export default function Home() {
       <div className="flex h-screen relative flex-col text-white">
         <figure className="z-10 absolute inset-0">
           <Image
-            src="/hero.jpg"
+            src={hero}
+            placeholder="blur"
             className="object-cover h-full"
-            width={1500}
-            height={1000}
             alt="Picture of the author"
           />
         </figure>
@@ -30,16 +31,16 @@ export default function Home() {
       <div className="max-w-screen-lg mx-auto">
         <div className="grid grid-cols-2 gap-3  my-12">
           <h1 className="font-oswald text-5xl">
-            WELCOME TO POKE&aposS DREAMY DISNEY GETAWAY{" "}
+            {`WELCOME TO POKE'S DREAMY DISNEY GETAWAY`}
           </h1>
           <p className=" text-base">
-            Experience the ultimate retreat just 4 miles from Disney World!
+            {`Experience the ultimate retreat just 4 miles from Disney World!
             Indulge in thrilling water slides, themed rooms like Frozen, Coco,
-            and Mario Game Room, and an entertainer&aposs kitchen. Relax on the
+            and Mario Game Room, and an entertainer's kitchen. Relax on the
             private patio with a heated pool. Accommodating up to 13 guests in 6
-            bedrooms, Poke&aposs Dreamy Disney Getaway is the perfect
+            bedrooms, Poke's Dreamy Disney Getaway is the perfect
             destination for magical memories. Stay connected with high-speed
-            Wi-Fi. Unleash the enchantment and book your stay today!
+            Wi-Fi. Unleash the enchantment and book your stay today!`}
           </p>
         </div>
         <div className="my-12" height="300px">
@@ -53,16 +54,16 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-2 gap-3  my-12">
           <p className="text-base">
-            A luxurious haven for Disney enthusiasts. Located just over 4 miles
+            {`A luxurious haven for Disney enthusiasts. Located just over 4 miles
             from the enchantment of Disney®, this themed home offers the perfect
             retreat. Nestled within the coveted Windsor Hills community,
-            you&aposll have access to incredible on-site resort amenities just
+            you'll have access to incredible on-site resort amenities just
             steps away. Step inside this professionally designed and furnished
             space, curated for your comfort and delight. With <b>6 bedrooms</b>{" "}
             accommodating <b>up to 13 guests</b>, everyone will have their own
             space to relax. Immerse yourself in the Disney spirit and embark on
             a journey filled with joy, laughter, and enchanting memories.
-            Experience the magic at Poke&aposs Dreamy Disney Getaway!
+            Experience the magic at Poke's Dreamy Disney Getaway!`}
           </p>
           <Image
             src="/DSC05248.jpg"

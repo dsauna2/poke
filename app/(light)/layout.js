@@ -1,9 +1,20 @@
-import "./globals.css";
-import Header from "./header";
+import Footer from "../footer";
+import "../globals.css";
+import Header from "../header";
 
-import { Inter } from "next/font/google";
+import { Inter, Oswald } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
+
+const oswald = Oswald({
+  subsets: ["latin"],
+  variable: "--font-oswald",
+  display: "swap",
+});
 
 export const metadata = {
   title: "Create Next App",
@@ -19,10 +30,11 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.className} ${oswald.variable}`}>
         {" "}
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
