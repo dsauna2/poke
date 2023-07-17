@@ -1,6 +1,7 @@
 import React from "react";
 import NavItem from "./NavItem";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Header({ dark }) {
   return (
@@ -18,12 +19,17 @@ export default function Header({ dark }) {
         />
       </a>
       <nav>
-        <ul className="flex">
+        <ul className="flex gap-4 items-center">
           <NavItem text="Home" link=""></NavItem>
           <NavItem text="Overview" link="overview"></NavItem>
           <NavItem text="Availability" link="availability"></NavItem>
           <NavItem text="Gallery" link="gallery"></NavItem>
-          <NavItem text="Book" link="book"></NavItem>
+          <Link
+            href="/book"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full"
+          >
+            Book Now
+          </Link>{" "}
         </ul>
       </nav>
     </header>

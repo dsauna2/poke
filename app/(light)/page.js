@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import hero from "../../public/hero.jpg";
 
 export default function Home() {
@@ -23,9 +24,12 @@ export default function Home() {
             NEAR THE MAGIC OF DISNEY
           </div>
 
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full mt-2">
+          <Link
+            href="/book"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full mt-2"
+          >
             Book Now
-          </button>
+          </Link>
         </div>
       </div>
       <div className="max-w-screen-lg mx-auto">
@@ -56,14 +60,14 @@ export default function Home() {
           <p className="text-base">
             A luxurious haven for Disney enthusiasts. Located just over 4 miles
             from the enchantment of Disney®, this themed home offers the perfect
-            retreat. Nestled within the coveted Windsor Hills community, you'll
-            have access to incredible on-site resort amenities just steps away.
-            Step inside this professionally designed and furnished space,
-            curated for your comfort and delight. With <b>6 bedrooms</b>{" "}
+            retreat. Nestled within the coveted Windsor Hills community,n
+            you&apos;ll have access to incredible on-site resort amenities just
+            steps away. Step inside this professionally designed and furnished
+            space, curated for your comfort and delight. With <b>6 bedrooms</b>{" "}
             accommodating <b>up to 13 guests</b>, everyone will have their own
             space to relax. Immerse yourself in the Disney spirit and embark on
             a journey filled with joy, laughter, and enchanting memories.
-            Experience the magic at Poke's Dreamy Disney Getaway!`
+            Experience the magic at Poke&apos;s Dreamy Disney Getaway!
           </p>
           <Image
             src="/DSC05248.jpg"
