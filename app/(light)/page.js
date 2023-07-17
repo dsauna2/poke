@@ -54,16 +54,16 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-2 gap-3  my-12">
           <p className="text-base">
-            {`A luxurious haven for Disney enthusiasts. Located just over 4 miles
+            A luxurious haven for Disney enthusiasts. Located just over 4 miles
             from the enchantment of Disney®, this themed home offers the perfect
-            retreat. Nestled within the coveted Windsor Hills community,
-            you'll have access to incredible on-site resort amenities just
-            steps away. Step inside this professionally designed and furnished
-            space, curated for your comfort and delight. With <b>6 bedrooms</b>{" "}
+            retreat. Nestled within the coveted Windsor Hills community, you'll
+            have access to incredible on-site resort amenities just steps away.
+            Step inside this professionally designed and furnished space,
+            curated for your comfort and delight. With <b>6 bedrooms</b>{" "}
             accommodating <b>up to 13 guests</b>, everyone will have their own
             space to relax. Immerse yourself in the Disney spirit and embark on
             a journey filled with joy, laughter, and enchanting memories.
-            Experience the magic at Poke's Dreamy Disney Getaway!`}
+            Experience the magic at Poke's Dreamy Disney Getaway!`
           </p>
           <Image
             src="/DSC05248.jpg"

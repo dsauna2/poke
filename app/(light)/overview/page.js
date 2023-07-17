@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import living from "../../../public/living_main.jpg";
+import living from "../../../public/im002.jpg";
 import { FiArrowDown } from "react-icons/fi";
 import { ContactItem } from "@/app/ContactItem";
 import { BsPeople } from "react-icons/bs";
