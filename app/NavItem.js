@@ -7,7 +7,7 @@ export default function NavItem({ link, text }) {
   const currentRoute = usePathname();
 
   return (
-    <li>
+    <li className="my-6 md:my-0">
       <Link
         href={`/${link}`}
         className={`underline-offset-8 ${
