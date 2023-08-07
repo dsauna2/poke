@@ -11,6 +11,7 @@
   "dependencies": {
     "@next/font": "^13.4.10",
     "@radix-ui/react-dialog": "^1.0.4",
+    "@vercel/analytics": "^1.0.1",
     "autoprefixer": "10.4.14",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
