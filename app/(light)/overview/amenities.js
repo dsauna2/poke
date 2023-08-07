@@ -32,7 +32,7 @@ export default function Amenities() {
   return (
     <div>
       <h1 className="font-oswald text-3xl mb-4">AMENITIES</h1>
-      <div className="grid grid-cols-3 gap-12">
+      <div className="grid md:grid-cols-3 gap-12">
         {amenityList.map((amenity) => (
           <Amenity
             key={amenity.title}

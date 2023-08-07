@@ -7,10 +7,10 @@ export default function Gallery() {
 
   return (
     <>
-      <div className="max-w-screen-lg mx-auto py-44 min-h-screen">
-        <div className="grid grid-cols-3 gap-3">
+      <div className="max-w-screen-lg mx-auto py-44 min-h-screen px-4">
+        <div className="grid md:grid-cols-3 gap-3">
           {arr.map((item, i) => (
-            <Link href={`/photo/${item}`}>
+            <Link href={`/photo/${item}`} key={item}>
               <Image
                 src={`/im00${item}.jpg`}
                 width={1900}

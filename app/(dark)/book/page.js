@@ -1,6 +1,6 @@
 export default function page() {
   return (
-    <div className="max-w-screen-lg mx-auto py-32 min-h-screen">
+    <div className="max-w-screen-lg mx-auto py-32 min-h-screen px-4">
       <div
         dangerouslySetInnerHTML={{
           __html: `<!-- OwnerRez Booking/Inquiry widget for Poke's Dreamy Disney Getaway -->

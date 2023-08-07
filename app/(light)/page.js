@@ -32,8 +32,8 @@ export default function Home() {
           </Link>
         </div>
       </div>
-      <div className="max-w-screen-lg mx-auto">
-        <div className="grid grid-cols-2 gap-3  my-12">
+      <div className="max-w-screen-lg mx-auto px-2">
+        <div className="grid md:grid-cols-2 gap-3  my-12">
           <h1 className="font-oswald text-5xl">
             {`WELCOME TO POKE'S DREAMY DISNEY GETAWAY`}
           </h1>
@@ -56,7 +56,7 @@ export default function Home() {
             style={{ width: "100%", height: "auto" }} // optional
           />
         </div>
-        <div className="grid grid-cols-2 gap-3  my-12">
+        <div className="grid md:grid-cols-2 gap-3  my-12">
           <p className="text-base">
             A luxurious haven for Disney enthusiasts. Located just over 4 miles
             from the enchantment of Disney®, this themed home offers the perfect

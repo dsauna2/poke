@@ -33,7 +33,7 @@ export default function Overview() {
           </div>
         </div>
       </div>
-      <div className="max-w-screen-lg mx-auto">
+      <div className="max-w-screen-lg mx-auto px-4">
         <div className="flex space-x-4 my-12">
           <ContactItem icon={<MdOutlineBedroomParent />} info="6 bedrooms" />
           <ContactItem icon={<BiBath />} info="4 bathrooms" />

@@ -40,9 +40,9 @@ export default function Header({ dark }) {
       </div>
       <nav>
         <ul
-          className={`md:flex gap-4 md:items-center md:static opacity-${
+          className={`md:flex gap-4 md:items-center absolute md:static z-[-1] left-0 pl-4 pb-4 w-full transition-all ease-in duration-500 opacity-${
             navVisibility ? "100" : "0"
-          } md:opacity-100`}
+          } md:opacity-100 ${dark ? " bg-slate-400" : ""}`}
         >
           <NavItem text="Home" link=""></NavItem>
           <NavItem text="Overview" link="overview"></NavItem>
