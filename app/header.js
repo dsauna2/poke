@@ -20,7 +20,7 @@ export default function Header({ dark }) {
           <Image width="80" alt="logo home navigation" src={logo} />
         </a>
         <button
-          onFocus={() => setNavVisibility(true)}
+          onClick={() => setNavVisibility(true)}
           onBlur={() => setNavVisibility(false)}
           class="relative group block md:hidden"
         >
@@ -50,7 +50,7 @@ export default function Header({ dark }) {
           <NavItem text="Gallery" link="gallery"></NavItem>
           <Link
             href="/book"
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 sm:px-10 md:px-20 rounded-full"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 sm:px-10  rounded-full"
           >
             Book Now
           </Link>{" "}
