@@ -1,10 +1,13 @@
-import React from "react";
-import { availabilityWidget } from "../../widgets";
+import dynamic from "next/dynamic";
+
+const DynamicOwnerRezWidget = dynamic(
+  () => import("../../widgets").then((mod) => mod.availabilityWidget),
+  {
+    ssr: false,
+    loading: () => <p>Loading...</p>, // Optional loading component
+  }
+);
 
 export default function page() {
-  return (
-    <div className="max-w-screen-lg mx-auto py-36 min-h-screen">
-      <div dangerouslySetInnerHTML={{ __html: availabilityWidget }}></div>
-    </div>
-  );
+  return <DynamicOwnerRezWidget />;
 }

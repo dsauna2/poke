@@ -12,6 +12,7 @@ export default function Gallery() {
           {arr.map((item, i) => (
             <Link href={`/photo/${item}`} key={item}>
               <Image
+                className="rounded-sm shadow-md"
                 src={`/im00${item}.jpg`}
                 width={1900}
                 height={1267}

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import hero from "../../public/hero.jpg";
+import frozen from "../../public/frozen.jpg";
 
 export default function Home() {
   const bookWidget = `
@@ -49,7 +50,9 @@ export default function Home() {
         </div>
         <div className="my-12" height="300px">
           <Image
+            className="rounded-sm shadow-sm"
             src="/DSC05344.jpg"
+            alt="Mario Game Room"
             width={0}
             height={0}
             sizes="100vw"
@@ -70,11 +73,9 @@ export default function Home() {
             Experience the magic at Poke&apos;s Dreamy Disney Getaway!
           </p>
           <Image
-            src="/DSC05248.jpg"
-            width={0}
-            height={0}
-            sizes="100vw"
-            style={{ width: "100%", height: "auto" }} // optional
+            className=" rounded-sm shadow-sm"
+            src={frozen}
+            alt="Frozen Room"
           />
         </div>
       </div>
