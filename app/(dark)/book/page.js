@@ -9,5 +9,9 @@ const DynamicOwnerRezWidget = dynamic(
 );
 
 export default function page() {
-  return <DynamicOwnerRezWidget />;
+  return (
+    <div className="p-5">
+      <DynamicOwnerRezWidget />
+    </div>
+  );
 }
