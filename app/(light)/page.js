@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import hero from "../../public/hero.jpg";
+import hero from "../../public/hero2.jpg";
 import frozen from "../../public/frozen.jpg";
 
 export default function Home() {
