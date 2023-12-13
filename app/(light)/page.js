@@ -16,7 +16,7 @@ export default function Home() {
             src={hero}
             placeholder="blur"
             className="object-cover h-full"
-            alt="Picture of the author"
+            alt="Coco Bedroom Picture"
           />
         </figure>
         <div className="flex flex-col items-center justify-center z-20 relative h-full pt-52">
