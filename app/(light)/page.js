@@ -2,12 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import hero from "../../public/hero2.jpg";
 import frozen from "../../public/frozen.jpg";
+import { sendEventToFacebook } from "@/lib/utils";
 
-export default function Home() {
-  const bookWidget = `
-  <div class="ownerrez-widget" data-propertyId="4cace0d1e8f44b069667db5417cb7758" data-widget-type="Booking/Inquiry" data-widgetId="f629c188734b4d1fb0a6d1f039ad19d3"></div>
-  <script src="https://secure.ownerreservations.com/widget.js"></script>
-  `;
+export default async function Home() {
   return (
     <div>
       <div className="flex h-screen relative flex-col text-white">
