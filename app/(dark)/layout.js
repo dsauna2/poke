@@ -18,6 +18,8 @@ const oswald = Oswald({
 });
 
 export const metadata = {
+  metadataBase: new URL("https://www.pokesdreamydisneygetaway.com/"),
+
   title: "Poke's Dreamy Disney Getaway",
   description: "6 bedroom rental 10 mins from Disney",
 };
