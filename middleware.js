@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse, userAgent } from "next/server";
 export async function middleware(request) {
   const { device } = userAgent(request);
-  console.log("it here");
   const payload = {
     data: [
       {

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import hero from "../../public/hero2.jpg";
+import hero from "../../public/hero.jpg";
 import frozen from "../../public/frozen.jpg";
 import { sendEventToFacebook } from "@/lib/utils";
 
@@ -48,7 +48,7 @@ export default async function Home() {
         <div className="my-12" height="300px">
           <Image
             className="rounded-sm shadow-sm"
-            src="/DSC05344.jpg"
+            src="/im0017.jpg"
             alt="Mario Game Room"
             width={0}
             height={0}
