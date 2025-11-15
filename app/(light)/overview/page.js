@@ -12,9 +12,10 @@ import Rules from "./rules";
 import { getAccommodationSchema, getPlaceSchema } from "@/lib/structured-data";
 
 export const metadata = {
-  title: "Property Overview",
+  title:
+    "Property Details | 6 Bed, 4 Bath Themed Home with Pool & Water Slides",
   description:
-    "6 bedroom, 4 bathroom Kissimmee vacation rental accommodating 13 guests. Features water slides, themed rooms (Frozen, Coco, Mario), entertainer's kitchen, heated pool, and high-speed Wi-Fi. Located in Windsor Hills, just 4 miles from Disney World.",
+    "6 bedroom, 4 bathroom luxury themed home in Kissimmee accommodating 13 guests. Features water slides, Frozen/Coco/Mario themed rooms, entertainer's kitchen, heated pool, and fiber Wi-Fi. Windsor Hills, just 4 miles from Disney World.",
   openGraph: {
     title: "Property Overview | 6 Bedroom Kissimmee Family Rental",
     description:
@@ -66,7 +67,7 @@ export default function Overview() {
             src={living}
             placeholder="blur"
             className="object-cover h-full"
-            alt="Picture of the author"
+            alt="Spacious living room with modern furnishings at Poke's Dreamy Disney Getaway vacation rental"
           />
         </figure>
         <div className="flex flex-col items-center justify-center z-20 relative h-full pt-52">

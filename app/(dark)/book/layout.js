@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "Book Your Stay",
+  title: "Book Now | Reserve Your Disney Vacation Home in Kissimmee",
   description:
-    "Book your stay at Poke's Dreamy Disney Getaway - 6 bedroom Kissimmee family rental. Perfect for large families visiting Disney World. Check availability and reserve your Orlando vacation home today.",
+    "Book your stay at Poke's Dreamy Disney Getaway - luxury 6 bedroom themed home in Kissimmee, FL. Perfect for large families visiting Disney World. Check rates, availability and reserve your magical vacation home today!",
   openGraph: {
     title: "Book Your Stay | Poke's Dreamy Disney Getaway",
     description:

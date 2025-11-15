@@ -16,7 +16,7 @@ export default function PhotoModal({ params }) {
           src={`/im${formattedId}.jpg`}
           width={850}
           height={600}
-          alt={`Photo ${formattedId}`}
+          alt={`Photo ${formattedId} of Poke's Dreamy Disney Getaway - themed vacation home near Disney`}
         />
       </DialogContent>
     </Dialog>

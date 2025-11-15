@@ -42,7 +42,7 @@ export default async function photopage({ params }) {
         src={`/im${formattedId}.jpg`}
         width={1800}
         height={600}
-        alt={`Photo ${formattedId}`}
+        alt={`Photo ${formattedId} of Poke's Dreamy Disney Getaway - themed rooms, pool, and amenities`}
       />
     </div>
   );

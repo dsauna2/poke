@@ -11,9 +11,10 @@ import {
 } from "@/lib/structured-data";
 
 export const metadata = {
-  title: "Home",
+  title:
+    "Magical 6-Bedroom Villa Near Disney | Themed Rooms, Private Pool & Water Slides",
   description:
-    "Experience the ultimate retreat just 4 miles from Disney World! 6 bedroom Kissimmee family rental with water slides, themed rooms (Frozen, Coco, Mario), heated pool, and accommodates up to 13 guests. Perfect for large families visiting Orlando.",
+    "Take your family to a magical 6-bedroom villa just 4 miles from Disney! Kids love the Frozen, Mario and Coco themed rooms, plus your own private heated pool and resort water park. Sleeps 13 guests in Kissimmee, FL.",
   openGraph: {
     title: "Poke's Dreamy Disney Getaway | 6 Bedroom Kissimmee Family Rental",
     description:
@@ -72,7 +73,7 @@ export default async function Home() {
           <Image
             src={hero}
             className="object-cover h-full"
-            alt="Coco Bedroom Picture"
+            alt="Luxury 6-bedroom Disney vacation home with themed rooms and private pool in Kissimmee Florida"
             priority
           />
         </figure>
@@ -132,7 +133,7 @@ export default async function Home() {
           <Image
             className=" rounded-sm shadow-sm"
             src={frozen}
-            alt="Frozen Room"
+            alt="Frozen-themed bedroom with magical Disney decor for kids at Poke's Dreamy Disney Getaway"
           />
         </div>
       </div>

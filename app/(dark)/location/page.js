@@ -5,9 +5,9 @@ import Script from "next/script";
 import { getPlaceSchema, getBreadcrumbSchema } from "@/lib/structured-data";
 
 export const metadata = {
-  title: "Location",
+  title: "Location | Windsor Hills Kissimmee - Only 4 Miles from Disney",
   description:
-    "Poke's Dreamy Disney Getaway is located in the renowned Windsor Hills community in Kissimmee, FL, just 3-4 miles from Disney World. Enjoy resort amenities including pool, aquatic park, movie theater, gaming arcades, and more.",
+    "Prime location in Windsor Hills Resort, Kissimmee, FL - just 3-4 miles from Disney World theme parks. Enjoy community amenities: resort pool, aquatic water park, movie theater, gaming arcades, fitness center. Perfect for Disney vacations!",
   openGraph: {
     title: "Location | Windsor Hills Kissimmee - 4 Miles from Disney",
     description:

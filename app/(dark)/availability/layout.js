@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "Availability Calendar",
+  title: "Check Availability | Book Your Disney Vacation Dates",
   description:
-    "Check availability for Poke's Dreamy Disney Getaway - 6 bedroom Kissimmee family rental. View our calendar and find the perfect dates for your Orlando vacation near Disney World.",
+    "Check real-time availability for Poke's Dreamy Disney Getaway - 6 bedroom themed home in Kissimmee. View our calendar and find the perfect dates for your Orlando Disney vacation. Sleeps 13 guests with themed rooms and heated pool.",
   openGraph: {
     title: "Availability Calendar | Poke's Dreamy Disney Getaway",
     description:

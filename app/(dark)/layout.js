@@ -2,6 +2,7 @@ import Footer from "../footer";
 import "../globals.css";
 import Header from "../header";
 import { Analytics } from "@vercel/analytics/react";
+import PromoBanner from "../components/PromoBanner";
 
 import { Inter, Oswald } from "next/font/google";
 
@@ -95,7 +96,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${inter.className} ${oswald.variable}`}>
-        {" "}
+        <PromoBanner />
         <Header dark={true} />
         {children}
         <Footer />

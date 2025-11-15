@@ -5,9 +5,9 @@ import Script from "next/script";
 import { getBreadcrumbSchema } from "@/lib/structured-data";
 
 export const metadata = {
-  title: "Photo Gallery",
+  title: "Photo Gallery | See Our Themed Rooms, Pool & Amenities",
   description:
-    "Browse photos of Poke's Dreamy Disney Getaway - 6 bedroom Kissimmee family rental. See themed rooms (Frozen, Coco, Mario), water slides, heated pool, kitchen, and all amenities. Perfect Orlando vacation home for large families.",
+    "Browse 68 photos of Poke's Dreamy Disney Getaway - luxury 6 bedroom vacation home in Kissimmee. See themed rooms (Frozen, Coco, Mario), water slides, heated pool, entertainer's kitchen, and all amenities. Perfect for large families visiting Disney.",
   openGraph: {
     title: "Photo Gallery | Poke's Dreamy Disney Getaway",
     description:
@@ -63,7 +63,7 @@ export default function Gallery() {
                   src={`/im${formattedItem}.jpg`}
                   width={1900}
                   height={1267}
-                  alt={`Gallery image ${formattedItem}`}
+                  alt={`Photo ${formattedItem} of Poke's Dreamy Disney Getaway - 6 bedroom themed vacation home near Disney`}
                   key={formattedItem}
                 />
               </Link>
