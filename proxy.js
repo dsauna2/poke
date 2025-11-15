@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse, userAgent } from "next/server";
 
-export async function middleware(request) {
+export async function proxy(request) {
   // Fire and forget - don't block the request
   const { device } = userAgent(request);
   const payload = {
@@ -37,7 +37,7 @@ export async function middleware(request) {
   return NextResponse.next();
 }
 
-// See "Matching Paths" below to learn more
 export const config = {
   matcher: ["/", "/overview", "/location"],
 };
+
