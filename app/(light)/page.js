@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import hero from "../../public/hero2.jpg";
+import hero from "../../public/hero_2025.webp";
 import frozen from "../../public/frozen.jpg";
 import { sendEventToFacebook } from "@/lib/utils";
 
@@ -11,9 +11,9 @@ export default async function Home() {
         <figure className="z-10 absolute inset-0">
           <Image
             src={hero}
-            placeholder="blur"
             className="object-cover h-full"
             alt="Coco Bedroom Picture"
+            priority
           />
         </figure>
         <div className="flex flex-col items-center justify-center z-20 relative h-full pt-52">

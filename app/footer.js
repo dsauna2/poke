@@ -1,14 +1,29 @@
-import React from "react";
-import { reviewsWidget } from "./widgets";
+"use client";
+import React, { useEffect, useState } from "react";
+import Script from "next/script";
 import { AiOutlinePhone, AiOutlineMail } from "react-icons/ai";
 import { ContactItem } from "./ContactItem";
 
 export default function Footer() {
-  const year = new Date().getFullYear();
+  const [year, setYear] = useState(2024);
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
+
   return (
     <footer className="bg-slate-400 py-10">
       <div className="container mx-auto max-w-screen-lg space-y-10">
-        <div dangerouslySetInnerHTML={{ __html: reviewsWidget }}></div>
+        <div
+          className="ownerrez-widget"
+          data-propertyid="4cace0d1e8f44b069667db5417cb7758"
+          data-widget-type="Reviews - Reviews"
+          data-widgetid="e3af476690774f16a2847e96448a3f2f"
+        ></div>
+        <Script
+          src="https://app.ownerrez.com/widget.js"
+          strategy="afterInteractive"
+        />
         <div className="flex items-center justify-between space-x-8 text-base">
           <div className="flex space-x-4">
             <ContactItem

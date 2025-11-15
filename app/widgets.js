@@ -21,7 +21,7 @@ export const availabilityWidget = () => {
         ></div>
       </div>
       <Script
-        src="https://secure.ownerreservations.com/widget.js"
+        src="https://app.ownerrez.com/widget.js"
         strategy="afterInteractive"
       />
     </>
@@ -31,7 +31,7 @@ export const availabilityWidget = () => {
 export const BookWidget = () => {
   return (
     <>
-      <div className="max-w-screen-lg mx-auto py-36 min-h-screen">
+      <div className="max-w-screen-lg mx-auto py-36 min-h-screen px-4">
         <div
           className="ownerrez-widget"
           data-propertyid="4cace0d1e8f44b069667db5417cb7758"
@@ -40,7 +40,7 @@ export const BookWidget = () => {
         ></div>
       </div>
       <Script
-        src="https://secure.ownerreservations.com/widget.js"
+        src="https://app.ownerrez.com/widget.js"
         strategy="afterInteractive"
       />
     </>

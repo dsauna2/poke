@@ -1,35 +1,58 @@
 "use client";
 
-import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
+import { useLoadScript, GoogleMap, Marker } from "@react-google-maps/api";
+import { useMemo } from "react";
 
-const mapStyles = {
-  width: "100%",
-  height: "100%",
-};
+const Map = () => {
+  const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "";
 
-const GoogleMap = () => {
+  const { isLoaded, loadError } = useLoadScript({
+    googleMapsApiKey: apiKey,
+  });
+
+  const center = useMemo(
+    () => ({
+      lat: 28.31842953507693,
+      lng: -81.60018801944732,
+    }),
+    []
+  );
+
+  if (loadError) {
+    return (
+      <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+        <p className="text-gray-600">
+          Error loading map. Please check your Google Maps API key.
+        </p>
+      </div>
+    );
+  }
+
+  if (!isLoaded) {
+    return <div className="w-full h-full bg-gray-200 animate-pulse" />;
+  }
+
+  if (!apiKey) {
+    return (
+      <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+        <p className="text-gray-600">Google Maps API key is not configured.</p>
+      </div>
+    );
+  }
+
   return (
-    //The <Map></Map> need the following props
-    //initialCenter={} will be the center on the Map
-    <Map
-      google={window.google}
+    <GoogleMap
       zoom={13}
-      style={mapStyles}
-      initialCenter={{
-        lat: 28.31842953507693,
-        lng: -81.60018801944732,
+      center={center}
+      mapContainerStyle={{ width: "100%", height: "100%" }}
+      options={{
+        disableDefaultUI: false,
+        zoomControl: true,
       }}
     >
-      <Marker
-        position={{
-          lat: 28.31842953507693,
-          lng: -81.60018801944732,
-        }}
-      />
-    </Map>
+      <Marker position={center} />
+    </GoogleMap>
   );
 };
 
-export default GoogleApiWrapper({
-  apiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
-})(GoogleMap);
+export default Map;
