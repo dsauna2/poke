@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse, userAgent } from "next/server";
+
 export async function middleware(request) {
+  // Fire and forget - don't block the request
   const { device } = userAgent(request);
   const payload = {
     data: [
@@ -19,17 +21,20 @@ export async function middleware(request) {
     access_token: process.env.FACEBOOK_ACCESS_TOKEN,
   };
 
-  const response = await fetch(
+  // Don't await - fire and forget to avoid blocking
+  fetch(
     `https://graph.facebook.com/v14.0/${process.env.FACEBOOK_PIXEL_ID}/events`,
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
     }
-  );
+  ).catch((error) => {
+    console.error("Facebook Pixel error:", error);
+  });
 
-  const data = await response.json();
-  console.log("Facebook API Response:", data); // Log the response
+  // Return next to continue the request
+  return NextResponse.next();
 }
 
 // See "Matching Paths" below to learn more
