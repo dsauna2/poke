@@ -12,7 +12,12 @@ export default function PhotoModal({ params }) {
   return (
     <Dialog defaultOpen onOpenChange={() => router.back()}>
       <DialogContent className="md:min-w-max">
-        <Image src={`/im${formattedId}.jpg`} width={850} height={600} />
+        <Image
+          src={`/im${formattedId}.jpg`}
+          width={850}
+          height={600}
+          alt={`Photo ${formattedId}`}
+        />
       </DialogContent>
     </Dialog>
   );

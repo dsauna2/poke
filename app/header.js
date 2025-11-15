@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import NavItem from "./NavItem";
 import Image from "next/image";
-import logo from "/public/poke_logo.svg";
 import { usePathname } from "next/navigation";
 
 export default function Header({ dark }) {
@@ -23,7 +22,12 @@ export default function Header({ dark }) {
     >
       <div className="flex justify-between items-center">
         <a href="/">
-          <Image width="80" alt="logo home navigation" src={logo} />
+          <Image
+            width={80}
+            height={80}
+            alt="logo home navigation"
+            src="/poke_logo.svg"
+          />
         </a>
         <button onClick={toggleNav} className="relative group block md:hidden">
           <div

@@ -22,10 +22,11 @@ export default function LocationPage() {
         {arr.map((item, i) => (
           <Image
             key={i}
-            width="720"
-            height="480"
+            width={720}
+            height={480}
             src={`/condo/condo0${item}.jpg`}
-          ></Image>
+            alt={`Condo image ${item}`}
+          />
         ))}
       </div>
       <div className=" w-full relative h-[300px]">

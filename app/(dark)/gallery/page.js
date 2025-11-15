@@ -18,6 +18,7 @@ export default function Gallery() {
                   src={`/im${formattedItem}.jpg`}
                   width={1900}
                   height={1267}
+                  alt={`Gallery image ${formattedItem}`}
                   key={formattedItem}
                 />
               </Link>

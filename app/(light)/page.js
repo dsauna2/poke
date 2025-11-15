@@ -45,15 +45,15 @@ export default async function Home() {
             Wi-Fi. Unleash the enchantment and book your stay today!`}
           </p>
         </div>
-        <div className="my-12" height="300px">
+        <div className="my-12">
           <Image
             className="rounded-sm shadow-sm"
             src="/im0017.jpg"
             alt="Mario Game Room"
-            width={0}
-            height={0}
+            width={1200}
+            height={800}
             sizes="100vw"
-            style={{ width: "100%", height: "auto" }} // optional
+            style={{ width: "100%", height: "auto" }}
           />
         </div>
         <div className="grid md:grid-cols-2 gap-3  my-12">
