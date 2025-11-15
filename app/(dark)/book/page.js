@@ -1,6 +1,9 @@
 "use client";
 import Script from "next/script";
 
+// Note: Metadata cannot be exported from client components
+// Metadata is handled by parent layout
+
 export default function BookPage() {
   return (
     <div className="max-w-screen-lg mx-auto py-36 min-h-screen px-4">

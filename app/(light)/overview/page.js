@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Script from "next/script";
 import living from "../../../public/im0031.jpg";
 import { FiArrowDown } from "react-icons/fi";
 import { ContactItem } from "@/app/ContactItem";
@@ -8,10 +9,57 @@ import { MdOutlineBedroomParent } from "react-icons/md";
 import { BiBath } from "react-icons/bi";
 import Amenities from "./amenities";
 import Rules from "./rules";
+import { getAccommodationSchema, getPlaceSchema } from "@/lib/structured-data";
+
+export const metadata = {
+  title: "Property Overview",
+  description:
+    "6 bedroom, 4 bathroom Kissimmee vacation rental accommodating 13 guests. Features water slides, themed rooms (Frozen, Coco, Mario), entertainer's kitchen, heated pool, and high-speed Wi-Fi. Located in Windsor Hills, just 4 miles from Disney World.",
+  openGraph: {
+    title: "Property Overview | 6 Bedroom Kissimmee Family Rental",
+    description:
+      "6 bedroom, 4 bathroom Orlando vacation home with water slides, themed rooms, heated pool. Accommodates 13 guests. Perfect for large families visiting Disney.",
+    url: "https://www.pokesdreamydisneygetaway.com/overview",
+    images: [
+      {
+        url: "/im0031.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Living room at Poke's Dreamy Disney Getaway",
+      },
+    ],
+  },
+  twitter: {
+    title: "Property Overview | 6 Bedroom Kissimmee Family Rental",
+    description:
+      "6 bedroom, 4 bathroom Orlando vacation home with water slides, themed rooms, heated pool. Accommodates 13 guests.",
+    images: ["/im0031.jpg"],
+  },
+  alternates: {
+    canonical: "https://www.pokesdreamydisneygetaway.com/overview",
+  },
+};
 
 export default function Overview() {
+  const accommodationSchema = getAccommodationSchema();
+  const placeSchema = getPlaceSchema();
+
   return (
     <>
+      <Script
+        id="accommodation-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(accommodationSchema),
+        }}
+      />
+      <Script
+        id="place-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(placeSchema),
+        }}
+      />
       <div className="flex h-screen relative flex-col text-white">
         <figure className="z-10 absolute inset-0">
           <Image

@@ -1,12 +1,72 @@
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 import hero from "../../public/hero_2025.webp";
 import frozen from "../../public/frozen.jpg";
 import { sendEventToFacebook } from "@/lib/utils";
+import {
+  getLocalBusinessSchema,
+  getAccommodationSchema,
+  getOrganizationSchema,
+} from "@/lib/structured-data";
+
+export const metadata = {
+  title: "Home",
+  description:
+    "Experience the ultimate retreat just 4 miles from Disney World! 6 bedroom Kissimmee family rental with water slides, themed rooms (Frozen, Coco, Mario), heated pool, and accommodates up to 13 guests. Perfect for large families visiting Orlando.",
+  openGraph: {
+    title: "Poke's Dreamy Disney Getaway | 6 Bedroom Kissimmee Family Rental",
+    description:
+      "6 bedroom Orlando vacation home for large families. Themed rooms, water slides, heated pool. Just 4 miles from Disney World. Accommodates 13 guests.",
+    url: "https://www.pokesdreamydisneygetaway.com/",
+    images: [
+      {
+        url: "/hero_2025.webp",
+        width: 1200,
+        height: 630,
+        alt: "Poke's Dreamy Disney Getaway - 6 Bedroom Kissimmee Family Rental",
+      },
+    ],
+  },
+  twitter: {
+    title: "Poke's Dreamy Disney Getaway | 6 Bedroom Kissimmee Family Rental",
+    description:
+      "6 bedroom Orlando vacation home for large families. Just 4 miles from Disney World. Accommodates 13 guests.",
+    images: ["/hero_2025.webp"],
+  },
+  alternates: {
+    canonical: "https://www.pokesdreamydisneygetaway.com/",
+  },
+};
 
 export default async function Home() {
+  const localBusinessSchema = getLocalBusinessSchema();
+  const accommodationSchema = getAccommodationSchema();
+  const organizationSchema = getOrganizationSchema();
+
   return (
     <div>
+      <Script
+        id="local-business-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(localBusinessSchema),
+        }}
+      />
+      <Script
+        id="accommodation-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(accommodationSchema),
+        }}
+      />
+      <Script
+        id="organization-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(organizationSchema),
+        }}
+      />
       <div className="flex h-screen relative flex-col text-white">
         <figure className="z-10 absolute inset-0">
           <Image
