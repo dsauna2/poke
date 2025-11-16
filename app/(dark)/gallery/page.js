@@ -1,37 +1,24 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
 import { getBreadcrumbSchema } from "@/lib/structured-data";
 
-export const metadata = {
-  title: "Photo Gallery | See Our Themed Rooms, Pool & Amenities",
-  description:
-    "Browse 68 photos of Poke's Dreamy Disney Getaway - luxury 6 bedroom vacation home in Kissimmee. See themed rooms (Frozen, Coco, Mario), water slides, heated pool, entertainer's kitchen, and all amenities. Perfect for large families visiting Disney.",
-  openGraph: {
-    title: "Photo Gallery | Poke's Dreamy Disney Getaway",
-    description:
-      "Browse photos of our 6 bedroom Kissimmee family rental. Themed rooms, water slides, heated pool, and more. Perfect for large families visiting Disney.",
-    url: "https://www.pokesdreamydisneygetaway.com/gallery",
-    images: [
-      {
-        url: "/im0001.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Photo gallery of Poke's Dreamy Disney Getaway",
-      },
-    ],
-  },
-  twitter: {
-    title: "Photo Gallery | Poke's Dreamy Disney Getaway",
-    description:
-      "Browse photos of our 6 bedroom Kissimmee family rental. Themed rooms, water slides, heated pool, and more.",
-    images: ["/im0001.jpg"],
-  },
-  alternates: {
-    canonical: "https://www.pokesdreamydisneygetaway.com/gallery",
-  },
-};
+function GalleryImage({ formattedItem }) {
+  const [imgSrc, setImgSrc] = useState(`/im${formattedItem}.webp`);
+
+  return (
+    <Image
+      className="rounded-sm shadow-md"
+      src={imgSrc}
+      width={1900}
+      height={1267}
+      alt={`Photo ${formattedItem} of Poke's Dreamy Disney Getaway - 6 bedroom themed vacation home near Disney`}
+      onError={() => setImgSrc(`/im${formattedItem}.jpg`)}
+    />
+  );
+}
 
 export default function Gallery() {
   const arr = Array.from({ length: 68 }, (_, i) => i + 1);
@@ -58,14 +45,7 @@ export default function Gallery() {
             const formattedItem = item.toString().padStart(4, "0");
             return (
               <Link href={`/photo/${formattedItem}`} key={formattedItem}>
-                <Image
-                  className="rounded-sm shadow-md"
-                  src={`/im${formattedItem}.jpg`}
-                  width={1900}
-                  height={1267}
-                  alt={`Photo ${formattedItem} of Poke's Dreamy Disney Getaway - 6 bedroom themed vacation home near Disney`}
-                  key={formattedItem}
-                />
+                <GalleryImage formattedItem={formattedItem} />
               </Link>
             );
           })}

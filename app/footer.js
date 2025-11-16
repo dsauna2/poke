@@ -15,6 +15,7 @@ export default function Footer() {
     <footer className="bg-slate-400 py-10">
       <div className="container mx-auto max-w-screen-lg space-y-10">
         <div
+          id="reviews"
           className="ownerrez-widget"
           data-propertyid="4cace0d1e8f44b069667db5417cb7758"
           data-widget-type="Reviews - Reviews"
