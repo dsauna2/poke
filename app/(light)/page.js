@@ -77,10 +77,9 @@ export default async function Home() {
             priority
           />
         </figure>
-        <div className="flex flex-col items-center justify-center z-20 relative h-full pt-52">
-          <div className="font-oswald text-6xl text-center leading-tight">
-            A WHIMSICAL ESCAPE <br />
-            NEAR THE MAGIC OF DISNEY
+        <div className="flex flex-col items-center justify-center z-20 relative h-full pt-52 px-4">
+          <div className="font-oswald text-6xl text-center leading-tight max-w-4xl">
+            6 Bedroom Themed Villa in Windsor Hills – Minutes From Disney
           </div>
 
           <Link
