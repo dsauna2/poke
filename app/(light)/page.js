@@ -101,20 +101,21 @@ export default async function Home() {
       </div>
       <a
         href="#reviews"
-        className="bg-[#4a46e1] hover:bg-[#3d39c5] text-white py-3 px-6 text-center font-bold text-lg transition-all duration-300 shadow-md flex items-center justify-center gap-2"
+        className="bg-[#4a46e1] hover:bg-[#3d39c5] text-white py-2 px-4 text-center font-medium text-sm transition-all duration-300 flex items-center justify-center gap-1.5"
       >
-        <FaStar /> 61 Five-Star Reviews — Families Love Staying Here
-        <FaStar />
+        <FaStar className="text-xs" /> 61 Five-Star Reviews — Families Love
+        Staying Here
+        <FaStar className="text-xs" />
       </a>
       <div className="max-w-screen-lg mx-auto px-4">
         {/* Main Intro Section */}
         <div className="grid md:grid-cols-2 gap-6 my-12">
           <div>
-            <h1 className="text-4xl font-bold mb-4">
+            <h1 className="text-3xl font-bold mb-4">
               6 Bedroom Disney Vacation Home in Kissimmee with Themed Rooms &
               Private Pool
             </h1>
-            <h2 className="font-oswald text-3xl text-gray-700 mb-4">
+            <h2 className="font-oswald text-2xl text-gray-700 mb-4">
               {`WELCOME TO POKE'S DREAMY DISNEY GETAWAY`}
             </h2>
           </div>
