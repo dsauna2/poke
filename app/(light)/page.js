@@ -87,8 +87,10 @@ export default async function Home() {
           />
         </figure>
         <div className="flex flex-col items-center justify-center z-20 relative h-full pt-52 px-4">
-          <div className="font-oswald text-6xl text-center leading-tight max-w-4xl">
-            6 Bedroom Themed Villa in Windsor Hills – Minutes From Disney
+          <div className="font-oswald text-6xl text-center leading-tight max-w-4xl uppercase">
+            6 Bedroom Themed Villa in Windsor Hills
+            <br />
+            <span className="text-4xl">Minutes From Disney</span>
           </div>
 
           <Link
@@ -101,7 +103,7 @@ export default async function Home() {
       </div>
       <a
         href="#reviews"
-        className="bg-[#4a46e1] hover:bg-[#3d39c5] text-white py-2 px-4 text-center font-medium text-sm transition-all duration-300 flex items-center justify-center gap-1.5"
+        className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 text-center font-medium text-sm transition-all duration-300 flex items-center justify-center gap-1.5"
       >
         <FaStar className="text-xs" /> 61 Five-Star Reviews — Families Love
         Staying Here
