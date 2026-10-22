@@ -28,6 +28,7 @@ module.exports = {
       fontFamily: {
         sans: ["var(--font-inter)"],
         oswald: ["var(--font-oswald)"],
+        figtree: ["var(--font-figtree)"],
       },
       colors: {
         border: "hsl(var(--border))",

@@ -5,14 +5,14 @@ import { usePathname } from "next/navigation";
 
 export default function NavItem({ link, text }) {
   const currentRoute = usePathname();
+  const active = currentRoute === "/" + link;
 
   return (
-    <li className="my-6 md:my-0">
+    <li>
       <Link
         href={`/${link}`}
-        className={`underline-offset-8 ${
-          currentRoute === "/" + link ? " underline" : ""
-        }`}
+        aria-current={active ? "page" : undefined}
+        className="link-slide inline-block my-3 md:my-0 text-[16px] font-normal"
       >
         {text}
       </Link>

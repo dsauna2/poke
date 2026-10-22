@@ -1,8 +1,12 @@
 import Map from "@/app/components/map";
 import React from "react";
-import Image from "next/image";
 import Script from "next/script";
+import Image from "next/image";
+import Reveal from "@/app/components/reveal";
+import { frame, pageTitle } from "@/app/components/ui";
 import { getPlaceSchema, getBreadcrumbSchema } from "@/lib/structured-data";
+
+const photos = [1, 2, 3, 4];
 
 export const metadata = {
   title: "Location | Windsor Hills Kissimmee - Only 4 Miles from Disney",
@@ -34,33 +38,29 @@ export const metadata = {
 };
 
 export default function LocationPage() {
-  const arr = Array.from({ length: 4 }, (_, i) => i + 1);
-  const placeSchema = getPlaceSchema();
-  const breadcrumbSchema = getBreadcrumbSchema([
-    { name: "Home", url: "/" },
-    { name: "Location", url: "/location" },
-  ]);
+  const schemas = [
+    ["place-schema", getPlaceSchema()],
+    [
+      "breadcrumb-schema",
+      getBreadcrumbSchema([
+        { name: "Home", url: "/" },
+        { name: "Location", url: "/location" },
+      ]),
+    ],
+  ];
 
   return (
-    <div className="max-w-screen-lg mx-auto py-32 min-h-screen px-4">
-      <Script
-        id="place-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(placeSchema),
-        }}
-      />
-      <Script
-        id="breadcrumb-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema),
-        }}
-      />
-      <h1 className=" font-oswald text-4xl font-extrabold text-gray-700 my-8">
-        LOCATION
-      </h1>
-      <p className="mb-8">
+    <div className={`${frame} pt-16 md:pt-28 pb-24 md:pb-40`}>
+      {schemas.map(([id, schema]) => (
+        <Script
+          key={id}
+          id={id}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
+      <h1 className={pageTitle}>Location</h1>
+      <p className="mt-6 max-w-[44ch] text-[clamp(1.25rem,2vw,1.75rem)] leading-[1.35]">
         Nestled within the renowned Windsor Hills community, Poke&apos;s Dreamy
         Disney Getaway boasts an exceptional location just around 3 miles from
         Disney World. The neighborhood offers an array of fantastic amenities
@@ -68,20 +68,27 @@ export default function LocationPage() {
         gaming arcades, ping pong tables, and a pool table, ensuring an
         unforgettable and vibrant vacation experience.
       </p>
-      <div className="grid md:grid-cols-2 gap-2 mb-8">
-        {arr.map((item, i) => (
-          <Image
-            key={i}
-            width={720}
-            height={480}
-            src={`/condo/condo0${item}.jpg`}
-            alt={`Condo image ${item}`}
-          />
+      <div className="mt-14 md:mt-20 grid sm:grid-cols-2 gap-3 md:gap-4">
+        {photos.map((n, i) => (
+          <Reveal
+            media
+            key={n}
+            delay={(i % 2) * 120}
+            className="relative aspect-[3/2] bg-[#efeadd]"
+          >
+            <Image
+              src={`/condo/condo0${n}.jpg`}
+              alt="Windsor Hills resort"
+              fill
+              sizes="(min-width: 640px) 50vw, 100vw"
+              className="object-cover"
+            />
+          </Reveal>
         ))}
       </div>
-      <div className=" w-full relative h-[300px]">
+      <Reveal className="relative mt-3 md:mt-4 h-[320px] md:h-[440px] bg-[#efeadd]">
         <Map />
-      </div>
+      </Reveal>
     </div>
   );
 }

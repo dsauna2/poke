@@ -1,56 +1,27 @@
-"use client";
-import React, { useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
+import React from "react";
 import Script from "next/script";
+import { frame, pageTitle } from "@/app/components/ui";
+import { getPhotos, getRooms } from "@/lib/photos";
 import { getBreadcrumbSchema } from "@/lib/structured-data";
-
-function GalleryImage({ formattedItem }) {
-  const [imgSrc, setImgSrc] = useState(`/im${formattedItem}.webp`);
-
-  return (
-    <Image
-      className="rounded-sm shadow-md"
-      src={imgSrc}
-      width={1900}
-      height={1267}
-      alt={`Photo ${formattedItem} of Poke's Dreamy Disney Getaway - 6 bedroom themed vacation home near Disney`}
-      onError={() => setImgSrc(`/im${formattedItem}.jpg`)}
-    />
-  );
-}
+import GalleryView from "./gallery-view";
 
 export default function Gallery() {
-  const arr = Array.from({ length: 68 }, (_, i) => i + 1);
+  const photos = getPhotos();
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: "Home", url: "/" },
     { name: "Gallery", url: "/gallery" },
   ]);
 
   return (
-    <>
+    <div className={`${frame} pt-16 md:pt-28 pb-24 md:pb-40`}>
       <Script
         id="breadcrumb-schema"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <div className="max-w-screen-lg mx-auto py-44 min-h-screen px-4">
-        <h1 className="font-oswald text-4xl font-extrabold text-gray-700 mb-8">
-          Photo Gallery
-        </h1>
-        <div className="grid md:grid-cols-3 gap-3">
-          {arr.map((item) => {
-            const formattedItem = item.toString().padStart(4, "0");
-            return (
-              <Link href={`/photo/${formattedItem}`} key={formattedItem}>
-                <GalleryImage formattedItem={formattedItem} />
-              </Link>
-            );
-          })}
-        </div>
-      </div>
-    </>
+      <h1 className={pageTitle}>Photo gallery</h1>
+      <p className="mt-4 text-[17px]">{photos.length} photos of the house</p>
+      <GalleryView photos={photos} rooms={getRooms(photos)} />
+    </div>
   );
 }

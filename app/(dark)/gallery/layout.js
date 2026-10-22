@@ -27,11 +27,6 @@ export const metadata = {
   },
 };
 
-export default function Layout({ children, modal }) {
-  return (
-    <div>
-      {children}
-      {modal}
-    </div>
-  );
+export default function Layout({ children }) {
+  return children;
 }

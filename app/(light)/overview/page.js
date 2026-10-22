@@ -1,15 +1,29 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { Users, BedDouble, Bath } from "lucide-react";
 import Script from "next/script";
 import living from "../../../public/im0031.jpg";
-import { FiArrowDown } from "react-icons/fi";
-import { ContactItem } from "@/app/ContactItem";
-import { BsPeople } from "react-icons/bs";
-import { MdOutlineBedroomParent } from "react-icons/md";
-import { BiBath } from "react-icons/bi";
 import Amenities from "./amenities";
 import Rules from "./rules";
+import Reveal from "@/app/components/reveal";
 import { getAccommodationSchema, getPlaceSchema } from "@/lib/structured-data";
+import { frame, sectionTitle, pageTitle, buttonInk } from "@/app/components/ui";
+
+const facts = [
+  { icon: BedDouble, label: "6 bedrooms" },
+  { icon: Bath, label: "4 bathrooms" },
+  { icon: Users, label: "13 guests" },
+];
+
+const features = [
+  "Water slides",
+  "Themed Frozen room, Coco room and Mario game room",
+  "Entertainer's kitchen",
+  "Private patio with pool",
+  "Hosts up to 13 guests",
+  "Fiber high speed Wi-Fi",
+];
 
 export const metadata = {
   title:
@@ -42,103 +56,90 @@ export const metadata = {
 };
 
 export default function Overview() {
-  const accommodationSchema = getAccommodationSchema();
-  const placeSchema = getPlaceSchema();
+  const schemas = [
+    ["accommodation-schema", getAccommodationSchema()],
+    ["place-schema", getPlaceSchema()],
+  ];
 
   return (
     <>
-      <Script
-        id="accommodation-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(accommodationSchema),
-        }}
-      />
-      <Script
-        id="place-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(placeSchema),
-        }}
-      />
-      <div className="flex h-screen relative flex-col text-white">
-        <figure className="z-10 absolute inset-0">
+      {schemas.map(([id, schema]) => (
+        <Script
+          key={id}
+          id={id}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
+      <div className="relative h-[75svh] min-h-[480px] overflow-hidden text-white">
+        <figure className="absolute inset-0">
           <Image
             src={living}
             placeholder="blur"
-            className="object-cover h-full"
+            priority
+            fill
+            sizes="100vw"
+            className="object-cover hero-settle"
             alt="Spacious living room with modern furnishings at Poke's Dreamy Disney Getaway vacation rental"
           />
         </figure>
-        <div className="flex flex-col items-center justify-center z-20 relative h-full pt-52">
-          <div className="font-oswald text-6xl text-center leading-tight">
-            6 BEDS 4 BATHS
-            <br />
-            10 MINS FROM DISNEY
-          </div>
-
-          <div className="text-6xl absolute bottom-0">
-            <FiArrowDown />
-          </div>
-        </div>
-      </div>
-      <div className="max-w-screen-lg mx-auto px-4">
-        <div className="flex space-x-4 my-12">
-          <ContactItem icon={<MdOutlineBedroomParent />} info="6 bedrooms" />
-          <ContactItem icon={<BiBath />} info="4 bathrooms" />
-          <ContactItem icon={<BsPeople />} info="13 people" />
-        </div>
-        <div className=" ">
-          <h1 className="font-oswald text-3xl mb-4">
-            {`POKE'S DREAMY DISNEY GETAWAY`}
+        <div className="absolute inset-0 bg-black/25" />
+        <div className={`absolute inset-x-0 bottom-0 pb-10 md:pb-14 ${frame}`}>
+          <h1 className={`${pageTitle} hero-rise`} style={{ "--d": "300ms" }}>
+            6 beds, 4 baths, 10 minutes from Disney
           </h1>
-          <div className="text-base">
-            Enjoy your stay at this gorgeous, themed freshly renovated home! 4
-            miles from Walt Disney World.
-            <ul>
-              <li>
-                <strong>WATER SLIDES</strong>
-              </li>
-              <li>
-                <strong>
-                  THEMED Frozen Room | Coco room | and Mario Garage
-                </strong>
-              </li>
-              <li>
-                <strong>{`Entertainer's Kitchen`}</strong>
-              </li>
-              <li>
-                <strong>Private patio with HEATED POOL</strong>
-              </li>
-              <li>
-                <strong>Host 13</strong>
-              </li>
-              <li>
-                <strong>Fiber High Speed Wi-Fi</strong>
-              </li>
-            </ul>
-            {`Situated just over 4 miles from the enchantment of Disney®, this
-            themed home is the perfect retreat. Located in the coveted Windsor
-            Hills community, you'll have access to incredible on-site resort
-            amenities just steps away. Indulge in the magic as you step inside
-            this professionally designed and furnished home. Every detail has
-            been thoughtfully curated to ensure your utmost comfort and delight.
-            After your daily adventures to a unwind in your private getaway.
-            Whether you're enjoying the outdoor retreat, basking in the sun, or
-            spending quality time with loved ones, Poke's Dreamy Disney Getaway
-            offers the perfect setting for creating cherished memories. With
-            ample space to comfortably accommodate up to 13 guests, this
-            luxurious home welcomes you into the Disney spirit from the moment
-            you arrive. Experience the enchantment at Poke's Dreamy Disney
-            Getaway and embark on an unforgettable journey filled with joy,
-            laughter, and magical moments!`}
-          </div>
-        </div>
-        <div className="my-12">
-          <Amenities />
-          <Rules />
         </div>
       </div>
+
+      <section className={`${frame} mt-24 md:mt-40 grid md:grid-cols-12 gap-10 md:gap-8`}>
+        <Reveal as="h2" className={`md:col-span-4 ${sectionTitle}`}>
+          {`Poke's Dreamy Disney Getaway`}
+        </Reveal>
+        <div className="md:col-span-8">
+          <Reveal
+            as="p"
+            className="max-w-[40ch] text-[clamp(1.5rem,2.4vw,2rem)] leading-[1.3]"
+          >
+            Enjoy your stay at this gorgeous, themed, freshly renovated home, 4
+            miles from Walt Disney World.
+          </Reveal>
+
+          <ul className="mt-10 flex flex-wrap gap-x-10 gap-y-4">
+            {facts.map(({ icon: Icon, label }, i) => (
+              <Reveal as="li" key={label} delay={i * 80} className="flex items-center gap-3 text-[17px]">
+                <Icon className="h-6 w-6" strokeWidth={1.25} aria-hidden="true" />
+                {label}
+              </Reveal>
+            ))}
+          </ul>
+
+          <ul className="mt-12 grid sm:grid-cols-2 gap-x-12 gap-y-3 text-[17px] leading-7">
+            {features.map((f, i) => (
+              <Reveal as="li" key={f} delay={(i % 2) * 80}>
+                {f}
+              </Reveal>
+            ))}
+          </ul>
+
+          <Reveal className="mt-12 max-w-[62ch] text-[17px] leading-7 flex flex-col gap-5">
+            <p>
+              {`Situated just over 4 miles from the enchantment of Disney®, this themed home is the perfect retreat. Located in the coveted Windsor Hills community, you'll have access to incredible on-site resort amenities just steps away. Step inside this professionally designed and furnished home, where every detail has been thoughtfully curated for your comfort and delight.`}
+            </p>
+            <p>
+              {`After your daily adventures, unwind in your private getaway. Whether you're enjoying the outdoor retreat, basking in the sun, or spending quality time with loved ones, Poke's Dreamy Disney Getaway offers the perfect setting for cherished memories. With ample space for up to 13 guests, this home welcomes you into the Disney spirit from the moment you arrive.`}
+            </p>
+          </Reveal>
+
+          <Reveal className="mt-10">
+            <Link href="/availability" className={buttonInk}>
+              Check availability
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+
+      <Amenities />
+      <Rules />
     </>
   );
 }

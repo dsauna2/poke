@@ -1,20 +1,35 @@
-"use client";
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { frame } from "@/app/components/ui";
+import { getPhotoIds } from "@/lib/photos";
 
-export default function photopage({ params }) {
-  const { id } = React.use(params);
-  const formattedId = id ? id.toString().padStart(4, "0") : "0000";
-  const [imgSrc, setImgSrc] = useState(`/im${formattedId}.webp`);
+// Pre-rendered at build time: the photo list comes from the public folder,
+// which is not on disk in a serverless function at request time.
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return getPhotoIds().map((id) => ({ id }));
+}
+
+export default async function PhotoPage({ params }) {
+  const { id } = await params;
+  if (!getPhotoIds().includes(id)) notFound();
 
   return (
-    <div className="max-w-screen-lg mx-auto py-44 min-h-screen px-4">
+    <div className={`${frame} pt-10 md:pt-16 pb-24 md:pb-40`}>
+      <Link href="/gallery" className="link-slide text-[16px]">
+        Back to the gallery
+      </Link>
       <Image
-        src={imgSrc}
-        width={1800}
-        height={600}
-        alt={`Photo ${formattedId} of Poke's Dreamy Disney Getaway - themed rooms, pool, and amenities`}
-        onError={() => setImgSrc(`/im${formattedId}.jpg`)}
+        className="mt-8 w-full h-auto"
+        src={`/im${id}.jpg`}
+        width={2400}
+        height={1600}
+        sizes="(min-width: 1400px) 1240px, 100vw"
+        alt={`Photo ${Number(id)} of Poke's Dreamy Disney Getaway - themed rooms, pool, and amenities`}
+        priority
       />
     </div>
   );

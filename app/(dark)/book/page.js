@@ -1,33 +1,27 @@
 import Image from "next/image";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import BookingWidget from "./BookingWidget";
 import encanto from "../../../public/encanto.webp";
+import { pageTitle } from "@/app/components/ui";
 
 export default function BookPage() {
   return (
-    <div className="grid md:grid-cols-2 min-h-screen">
-      {/* Left side - Booking Widget in Card */}
-      <div className="py-36 px-4 md:px-8 flex items-start justify-center">
-        <div className="w-full max-w-2xl sticky top-24">
-          <Card className="shadow-xl">
-            <CardHeader className="text-center border-b bg-gradient-to-r from-blue-50 to-indigo-50">
-              <CardTitle className="text-xl font-bold text-gray-800">
-                Secure Payment · Fully Licensed · 24/7 Guest Support
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="p-6">
-              <BookingWidget />
-            </CardContent>
-          </Card>
+    <div className="grid md:grid-cols-2 min-h-[80svh]">
+      <div className="px-4 sm:px-10 md:px-16 pt-16 md:pt-28 pb-24 md:pb-40">
+        <div className="w-full max-w-2xl md:ml-auto">
+          <h1 className={pageTitle}>Book your stay</h1>
+          <p className="mt-4 mb-12 text-[17px] leading-7">
+            Secure payment, fully licensed, 24/7 guest support.
+          </p>
+          <BookingWidget />
         </div>
       </div>
 
-      {/* Right side - Image fills entire space */}
-      <div className="relative min-h-screen">
+      <div className="relative min-h-[420px]">
         <Image
           src={encanto}
           alt="Encanto-themed bedroom at Poke's Dreamy Disney Getaway"
           fill
+          sizes="(min-width: 768px) 50vw, 100vw"
           className="object-cover"
           priority
         />

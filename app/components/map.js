@@ -20,7 +20,7 @@ const Map = () => {
 
   if (loadError) {
     return (
-      <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+      <div className="w-full h-full bg-[#efeadd] flex items-center justify-center">
         <p className="text-gray-600">
           Error loading map. Please check your Google Maps API key.
         </p>
@@ -29,12 +29,12 @@ const Map = () => {
   }
 
   if (!isLoaded) {
-    return <div className="w-full h-full bg-gray-200 animate-pulse" />;
+    return <div className="w-full h-full bg-[#efeadd]" />;
   }
 
   if (!apiKey) {
     return (
-      <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+      <div className="w-full h-full bg-[#efeadd] flex items-center justify-center">
         <p className="text-gray-600">Google Maps API key is not configured.</p>
       </div>
     );
