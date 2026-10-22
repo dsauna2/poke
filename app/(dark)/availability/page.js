@@ -1,9 +1,14 @@
 "use client";
 import Script from "next/script";
+import { frame, pageTitle } from "@/app/components/ui";
 
 export default function AvailabilityPage() {
   return (
-    <div className="max-w-screen-lg mx-auto py-36 min-h-screen px-4">
+    <div className={`${frame} pt-16 md:pt-28 pb-24 md:pb-40 min-h-[80svh]`}>
+      <h1 className={pageTitle}>Availability</h1>
+      <p className="mt-4 mb-12 max-w-[50ch] text-[17px] leading-7">
+        Pick your dates to see what is open, then book your stay.
+      </p>
       {/* OwnerRez Multiple Month Calendar widget for Poke's Dreamy Disney Getaway */}
       <div
         className="ownerrez-widget"

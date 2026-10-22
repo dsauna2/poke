@@ -4,19 +4,7 @@ import Header from "../header";
 import { Analytics } from "@vercel/analytics/react";
 import PromoBanner from "../components/PromoBanner";
 
-import { Inter, Oswald } from "next/font/google";
-
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter",
-});
-
-const oswald = Oswald({
-  subsets: ["latin"],
-  variable: "--font-oswald",
-  display: "swap",
-});
+import { figtree } from "../fonts";
 
 export const metadata = {
   metadataBase: new URL("https://www.pokesdreamydisneygetaway.com/"),
@@ -95,7 +83,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${oswald.variable}`}>
+      <body
+        className={`${figtree.variable} font-figtree font-light text-[#3e3e3e] bg-[#faf7f0]`}
+      >
         <PromoBanner />
         <Header dark={true} />
         {children}
