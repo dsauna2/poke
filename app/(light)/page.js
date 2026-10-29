@@ -15,10 +15,10 @@ import {
   Star,
 } from "lucide-react";
 import Script from "next/script";
-import hero from "../../public/hero_2025.webp";
 import frozen from "../../public/frozen.jpg";
 import gameRoom from "../../public/im0017.jpg";
 import Reveal from "../components/reveal";
+import HeroVideo from "../components/hero-video";
 import {
   getLocalBusinessSchema,
   getAccommodationSchema,
@@ -143,17 +143,7 @@ export default function Home() {
         />
       ))}
       <div className="relative h-[calc(100svh-2.4rem)] min-h-[560px] overflow-hidden text-white">
-        <figure className="absolute inset-0">
-          <Image
-            src={hero}
-            placeholder="blur"
-            priority
-            fill
-            sizes="100vw"
-            className="object-cover hero-settle"
-            alt="Coco-themed bedroom at Poke's Dreamy Disney Getaway, a 6-bedroom Disney vacation home in Kissimmee"
-          />
-        </figure>
+        <HeroVideo alt="Coco-themed bedroom at Poke's Dreamy Disney Getaway, a 6-bedroom Disney vacation home in Kissimmee" />
         <div className="absolute inset-0 bg-black/25" />
         <div className={`absolute inset-x-0 bottom-0 pb-10 md:pb-14 ${frame}`}>
           <h1
